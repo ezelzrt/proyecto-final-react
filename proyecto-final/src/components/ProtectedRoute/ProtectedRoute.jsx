@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom'
-import { useAuthContext } from '../../context/AuthContext/useAuthContext.jsx'
+import { useAuthContext } from '../../context/AuthContext/useAuthContext';
 
-export const ProrectedRoute = ({children}) => {
+export const ProtectedRoute = ({children}) => {
     const {user} = useAuthContext();
 
     if (!user) {

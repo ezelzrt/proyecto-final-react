@@ -1,29 +1,16 @@
 import { useState, useEffect } from 'react';
 import { ItemList } from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { getProducts } from '../../services/products';
 
 export const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const { category } = useParams();
 
     useEffect(() => {
-        fetch("/data/products.json")
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Error fetching products");
-                }
-                return response.json();
-            })
-            .then((data) => {
-                let products = data;
-                if (category) {
-                    products = data.filter(
-                        (product) => product.category === category
-                    );
-                }
-                setProducts(products);
-            })
-            .catch((error) => console.error(error));
+        getProducts(category)
+            .then((items) => setProducts(items))
+            .catch((error) => console.error('Error fetching products:', error));
     }, [category]);
 
     return (
