@@ -3,6 +3,7 @@ import { ProductFormUI } from "../ProductFormUI/ProductFormUI";
 import { validateProducts } from "../../../utils/validateProducts";
 import { uploadToImgbb } from "../../../services/uploadImage";
 import { createProduct } from "../../../services/products";
+import { CATEGORIES } from "../../../utils/config";
 
 import "./ProductFormContainer.css";
 
@@ -67,6 +68,7 @@ export const ProductFormContainer = () => {
   return (
     <ProductFormUI
       product={product}
+      categories={CATEGORIES}
       errors={errors}
       loading={loading}
       onChange={handleChange}

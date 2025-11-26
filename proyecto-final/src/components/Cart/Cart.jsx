@@ -15,7 +15,7 @@ export const Cart = () => {
         <div className="cart-items-container">
           {cart.map((item) => (
             <Item key={item.id} {...item}>
-                <span>Cantidad: {item.quantity}</span>
+                <span className="quantity-badge">Cantidad: {item.quantity}</span>
                 <button
                     className="remove-button"
                     onClick={() => removeFromCart(item.id)}
@@ -31,10 +31,10 @@ export const Cart = () => {
           <div className="total-pagar">
             <p>Total a pagar: ${total()}</p>
           </div>
-          <button className="btn" onClick={checkout}>
+          <button className="btn btn-primary" onClick={checkout}>
             Finalizar compra
           </button>
-          <button className="btn" onClick={clearCart}>
+          <button className="btn btn-danger" onClick={clearCart}>
             Vaciar carrito
           </button>
         </div>

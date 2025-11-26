@@ -19,3 +19,48 @@
     margin-top: 20px;
     text-align: center;
 }
+
+.cart-summary .btn {
+    margin: 0 8px;
+}
+
+.cart-summary .btn.btn-primary {
+    background: linear-gradient(180deg,#646cff,#535bf2);
+    color: white;
+    border: none;
+    box-shadow: 0 6px 14px rgba(83,91,242,0.14);
+    padding: 0.6rem 1.1rem;
+}
+.cart-summary .btn.btn-primary:hover { opacity: 0.95; }
+
+.cart-summary .btn.btn-danger {
+    background: transparent;
+    color: #ff6b6b;
+    border: 1px solid rgba(255,107,107,0.18);
+    padding: 0.5rem 1rem;
+}
+.cart-summary .btn.btn-danger:hover { background: rgba(255,107,107,0.06); }
+
+.remove-button {
+    background: transparent;
+    border: 2px solid rgba(255,107,107,0.18);
+    color: #ff6b6b;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s, transform 0.12s, border-color 0.12s;
+}
+.remove-button:hover { background: #ff6b6b; color: #fff; transform: translateY(-1px); border-color: #ff6b6b; }
+
+/* Quantity badge to make the item quantity prominent */
+.quantity-badge {
+    display: inline-block;
+    min-width: 36px;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 999px;
+    border: 2px solid #646cff; /* primary blue used across the UI */
+    background: rgba(100,108,255,0.08);
+    margin-right: 8px;
+}

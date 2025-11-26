@@ -1,0 +1,96 @@
+/* Product form styles */
+.product-form-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 3rem 0; /* larger space around form */
+}
+
+.product-form {
+	width: 100%;
+	max-width: 1120px; /* allow the form to be wider on desktop */
+	padding: 2rem 2.5rem;
+	background: linear-gradient(180deg, rgba(32,32,32,0.85), rgba(18,18,18,0.95));
+	border-radius: 12px;
+	border: 1px solid rgba(255,255,255,0.04);
+	box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+	color: #eaeaea;
+}
+
+.product-form h2 {
+	margin: 0 0 0.75rem 0;
+	font-size: 1.4rem;
+	text-align: left;
+}
+
+.form-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-bottom: 1.25rem;
+	text-align: left;
+}
+
+.form-field label {
+	font-weight: 600;
+	font-size: 0.95rem;
+	color: #e7e7e7;
+}
+
+.product-form .input,
+.product-form .textarea,
+.product-form .file-input {
+	width: 100%;
+	padding: 0.75rem 0.9rem; /* add more comfortable padding */
+	border-radius: 8px;
+	border: 1px solid rgba(255,255,255,0.06);
+	background-color: rgba(255,255,255,0.02);
+	color: #fff;
+}
+
+.product-form .select {
+	width: 100%;
+	padding: 0.75rem 0.9rem;
+	border-radius: 8px;
+	border: 1px solid rgba(255,255,255,0.06);
+	background-color: rgba(255,255,255,0.02);
+	color: #fff;
+}
+/* Dropdown options style (dark theme) */
+.product-form .select option {
+	background-color: #1a1a1a;
+	color: #fff;
+}
+.product-form .select option:hover,
+.product-form .select option:focus {
+	background-color: rgba(100,108,255,0.08);
+}
+
+.product-form .textarea { min-height: 140px; resize: vertical; }
+
+.product-form .file-input { padding: 0.45rem 0.55rem; }
+
+.product-form .error { color: #ff8b8b; font-size: 0.9rem; margin: 0; }
+
+.product-form .form-actions {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1rem;
+}
+
+.product-form .btn {
+	background-color: #646cff;
+	color: #fff;
+	padding: 0.6rem 1rem;
+	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0 6px 16px rgba(100,108,255,0.12);
+}
+.product-form .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+@media (max-width: 1200px) {
+	.product-form { max-width: 84%; }
+}
+@media (max-width: 640px) {
+	.product-form { max-width: 100%; padding: 1rem; }
+}

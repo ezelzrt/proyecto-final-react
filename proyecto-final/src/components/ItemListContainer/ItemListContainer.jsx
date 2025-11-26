@@ -10,7 +10,10 @@ export const ItemListContainer = () => {
     useEffect(() => {
         getProducts(category)
             .then((items) => setProducts(items))
-            .catch((error) => console.error('Error fetching products:', error));
+            .catch((error) => {
+                console.error('Error fetching products:', error);
+                setProducts([]);
+            });
     }, [category]);
 
     return (

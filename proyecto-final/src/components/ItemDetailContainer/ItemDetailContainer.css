@@ -1,0 +1,55 @@
+/* Styles for Item detail page */
+.item-detail-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5rem 1rem;
+}
+
+.item-detail-page .product-item {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column; /* keep orientation vertical */
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 1.75rem 2rem;
+}
+
+.item-detail-page .product-item img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.item-detail-page .product-item .product-title {
+  font-size: 1.7rem;
+}
+
+.item-detail-page .product-item p { margin: 0.35rem 0; font-size: 1.35rem; line-height: 1.5; color: #e5e5e5; }
+
+.item-detail-page .product-actions {
+  flex-direction: row;
+  gap: 12px;
+  margin-top: 0.5rem;
+}
+
+/* Make Count controls larger in the product detail view */
+.item-detail-page .count-container { gap: 14px; }
+.item-detail-page .count-container .count-buttons { gap: 16px; }
+.item-detail-page .count-container .count-buttons .btn { padding: 10px 14px; font-size: 23px; }
+.item-detail-page .count-container > button { padding: 10px 16px; font-size: 20px; border-radius: 8px; }
+
+@media (max-width: 900px) {
+  .item-detail-page .product-item {
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .item-detail-page .product-item img {
+    width: 100%;
+  }
+}

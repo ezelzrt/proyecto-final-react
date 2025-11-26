@@ -13,6 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Header variable for dynamic spacing */
+:root {
+  --header-height: 72px;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -24,10 +29,17 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 1;
 }
 
 h1 {
@@ -54,6 +66,19 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.btn {
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+.btn:hover {
+  opacity: 0.95;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -65,4 +90,15 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* add top padding so page content is not hidden under sticky header */
+.page-content {
+  padding-top: var(--header-height);
+  flex: 1; /* allow content area to grow, pushing footer down */
+}
+
+@media (max-width: 480px) {
+  /* increase page-content padding when header stacks into multi-row */
+  .page-content { padding-top: 110px; }
 }

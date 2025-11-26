@@ -1,0 +1,32 @@
+/* Footer styles */
+.app-footer {
+	width: 100vw; /* make the footer full viewport width */
+	margin-left: calc(50% - 50vw);
+	margin-top: 1.5rem;
+	padding: 1rem 0;
+	text-align: center;
+	color: #d7d7d7;
+	background: linear-gradient(180deg, rgba(18,18,18,0.96), rgba(12,12,12,0.96));
+	border-top: 1px solid rgba(255,255,255,0.04);
+}
+.app-footer p { margin: 0; }
+
+.app-footer-inner {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0 1rem;
+	/* inner container should be transparent; background is full-width on the parent */
+}
+.app-footer-inner a { color: #dcdcdc; text-decoration: underline; }
+.app-footer-inner a { color: #dcdcdc; text-decoration: none; display: inline-flex; gap: 0.5rem; align-items: center; }
+.app-footer-inner .footer-left { display: flex; align-items: center; }
+.app-footer-inner .footer-right { display: flex; align-items: center; }
+.github-icon { width: 20px; height: 20px; fill: #dcdcdc; display: inline-block; }
+.footer-link-text { color: #dcdcdc; font-weight: 600; }
+
+/* Ensure footer stays at bottom of page content by using layout flex */
+.app-footer { flex-shrink: 0; }

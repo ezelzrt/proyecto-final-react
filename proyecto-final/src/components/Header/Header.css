@@ -1,0 +1,131 @@
+/* Header layout and nav styles */
+.app-header {
+	position: fixed; /* make header span viewport and remain fixed */
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 200;
+	background: linear-gradient(90deg, rgba(28,28,28,0.98), rgba(18,18,18,0.98));
+	box-shadow: 0 1px 2px rgba(0,0,0,0.16);
+	height: var(--header-height, 72px);
+}
+
+.app-header-inner {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	gap: 1rem;
+	position: relative;
+}
+
+.app-header h2 {
+	margin: 0;
+	color: #f2f2f2;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+}
+
+.app-header nav ul {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+
+.app-header nav { overflow-x: auto; }
+.app-header nav::-webkit-scrollbar { display: none; }
+
+/* style anchor / nav link */
+.app-header nav a,
+.app-header nav .nav-link {
+	text-decoration: none;
+	color: #dcdcdc;
+	padding: 0.35rem 0.6rem;
+	border-radius: 6px;
+	transition: background-color 0.18s, color 0.18s;
+	font-weight: 500;
+}
+.app-header nav .nav-link:hover {
+	background: rgba(255,255,255,0.03);
+	color: #fff;
+}
+
+/* active link style */
+.app-header nav .nav-link.active,
+.app-header nav a.active {
+	background: #535bf2;
+	color: white;
+}
+
+.app-header .in-cart,
+.app-header .cart-badge {
+	display: inline-block;
+	margin-left: 0.4rem;
+	background: #646cff;
+	color: white;
+	font-weight: 700;
+	padding: 0.15rem 0.5rem;
+	border-radius: 999px;
+	font-size: 0.8rem;
+}
+
+/* make the cart look like a single rectangular clickable area that contains label + badge */
+.app-header nav .cart-item { display: inline-flex; align-items: center; }
+.app-header nav .cart-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.18rem 0.5rem;
+	border-radius: 8px;
+	background: rgba(255,255,255,0.02);
+	border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Make nav centered regardless of width (absolute centering) */
+.center-slot {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 205;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	max-width: 720px;
+	pointer-events: auto;
+	overflow: hidden;
+}
+.header-logo {
+	width: 44px;
+	height: 44px;
+	fill: #fff;
+	display: block;
+}
+.logo-link { display: flex; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); align-items: center; gap: 8px; text-decoration: none; z-index: 210; }
+.left-slot { display: none; }
+.right-slot { display: flex; align-items: center; justify-content: flex-end; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); }
+
+/* small device adjustments */
+@media (max-width: 640px) {
+	.app-header-inner { padding: 0.4rem 0.8rem; }
+	.app-header nav ul { gap: 0.4rem; }
+	.app-header { padding: 0.6rem; }
+	/* revert to normal flow for center-slot */
+	.center-slot { position: static; transform: none; width: 100%; justify-content: flex-start; }
+}
+
+/* Very small devices: stack logo above nav */
+@media (max-width: 480px) {
+	.app-header { height: auto; }
+	.app-header-inner { grid-template-columns: 1fr; gap: 0.6rem; align-items: start; }
+	.left-slot { justify-self: center; }
+	.center-slot { justify-self: center; }
+	.right-slot { display: none; }
+	.app-header-inner nav { position: static; transform: none; width: auto; }
+}

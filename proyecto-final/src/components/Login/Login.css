@@ -1,0 +1,33 @@
+/* Login styles */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(180deg, rgba(30,30,30,0.95), rgba(18,18,18,0.95));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 1.6rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.login-card h2 { margin: 0 0 1rem 0; color: #eaeaea; font-size: 1.4rem; }
+.login-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.9rem; }
+.login-field label { color: #d7d7d7; font-weight: 600; }
+.login-field input {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #fff;
+}
+.login-actions { display: flex; justify-content: flex-end; }
+.login-actions .btn { background-color: #646cff; color: #fff; }
+
+@media (max-width: 640px) {
+  .login-wrapper { padding: 1.2rem; }
+  .login-card { padding: 1rem; }
+}
